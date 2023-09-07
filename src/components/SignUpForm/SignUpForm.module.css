@@ -1,0 +1,96 @@
+#sign_up {
+  /* border: 2px solid #000; */
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 0;
+}
+
+.sign_up_container {
+  padding: 60px 40px;
+  background-color: #fff;
+  text-align: center;
+  font-style: italic;
+  border-radius: 16px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.sign_up_container h1 {
+  font-size: 32px;
+  font-weight: 400;
+  color: #8b8b8b;
+  margin-bottom: 60px;
+}
+
+.form_group {
+  border: 2px solid #bfbfbf;
+  border-bottom: none;
+  border-top: none;
+}
+
+.form_group > p {
+  text-align: left;
+  margin-left: 20px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.form_group:first-child {
+  border-top: 2px solid #bfbfbf;
+}
+
+.form_control {
+  padding: 16px 16px;
+  display: block;
+  border: none;
+  border-bottom: 2px solid #bfbfbf;
+  font-size: 24px;
+  outline: none;
+  transition: all 0.2s linear;
+}
+
+.form_control::placeholder {
+  font-size: 18px;
+}
+
+.sign_up_container button {
+  width: 100%;
+  margin-top: 20px;
+  background-color: #1b1b1b;
+  border: none;
+  color: #d7d7d7;
+  padding: 18px 0;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  display: block;
+  font-size: 16px;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.2s linear;
+}
+
+.sign_up_container button:hover {
+  /* transform: scale(1.1); */
+  color: #fff;
+  background-color: #000;
+}
+
+.sign_up_container > p {
+  margin-top: 32px;
+  color: #8b8b8b;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.8px;
+}
+
+.sign_up_container p span {
+  color: #007bff;
+  cursor: pointer;
+}
+
+.sign_up_container p span:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}

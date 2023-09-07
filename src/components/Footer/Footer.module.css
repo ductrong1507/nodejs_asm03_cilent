@@ -1,0 +1,37 @@
+#footer {
+  background-color: #000;
+}
+
+.footer_container {
+  padding: 60px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer_item h1 {
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+
+.footer_item ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 8px;
+  flex-direction: column;
+  padding: 0 4px;
+}
+
+.link {
+  text-decoration: none;
+  color: #646464;
+  font-size: 18px;
+  font-weight: 400;
+  font-style: italic;
+}

@@ -1,0 +1,49 @@
+#sidebar_category {
+  font-style: italic;
+}
+
+#sidebar_category h1 {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.sidebar_container {
+}
+
+.sidebar_item {
+}
+
+.sidebar_item h2,
+.sidebar_item h3,
+.sidebar_item li {
+  padding: 12px 24px;
+  line-height: 1;
+}
+
+.sidebar_item h2 {
+  background-color: #000;
+  color: #c8c8c8;
+  font-size: 18px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.sidebar_item h3 {
+  background-color: rgb(240, 240, 240);
+  color: rgb(80, 80, 80);
+  font-size: 18px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.sidebar_item ul {
+  list-style-type: none;
+}
+
+.sidebar_item li {
+  color: #646464;
+  font-size: 15px;
+  cursor: pointer;
+}

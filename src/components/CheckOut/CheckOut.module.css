@@ -1,0 +1,185 @@
+#check_out {
+  padding: 40px 0;
+}
+
+/* Phần banner */
+.check_out_banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f8f9fa;
+  padding: 80px 40px;
+  text-transform: uppercase;
+  font-style: italic;
+  margin-bottom: 32px;
+}
+
+.check_out_banner h1 {
+  font-weight: 500;
+  font-size: 32px;
+  color: #2d2d2d;
+}
+
+.check_out_banner h3,
+.check_out_banner h3 span {
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.check_out_banner h3 {
+  color: #2d2d2d;
+}
+
+.check_out_banner h3 span {
+  color: #aaaaaa;
+}
+
+/* phần nội dung chính */
+.check_out_content > h1 {
+  text-transform: uppercase;
+  font-weight: 500;
+  font-style: italic;
+  font-size: 25px;
+  color: #2d2d2d;
+}
+
+.check_out_container {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 24px;
+  margin: 24px 0;
+  align-items: start;
+  justify-items: stretch;
+}
+
+/* Phần form thông tin  */
+.check_out_form {
+  padding: 6px 0;
+}
+
+.form_group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+.form_group > label {
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 500;
+  color: #8b8b8b;
+}
+
+.form_control {
+  padding: 12px 16px;
+  display: block;
+  border: 2px solid #bfbfbf;
+  font-size: 16px;
+  outline: none;
+  transition: all 0.2s linear;
+}
+
+.form_control::placeholder {
+  font-weight: 500;
+  font-size: 18px;
+  color: rgb(190, 190, 190);
+  text-transform: capitalize;
+  /* color: #fff; */
+}
+
+.form_control:focus {
+  border: 2px solid #000;
+  font-weight: 500;
+}
+
+.form_control:focus::placeholder {
+  color: transparent;
+}
+
+.check_out_form button {
+  background-color: #1b1b1b;
+  border: none;
+  color: #d7d7d7;
+  padding: 16px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 400;
+  font-style: italic;
+  cursor: pointer;
+  transition: all 0.2s linear;
+}
+
+.check_out_form button:hover {
+  background-color: #000;
+
+  color: #fff;
+}
+
+/* Phần order */
+.check_out_order {
+  background-color: #f8f9fa;
+  padding: 40px 16px;
+  font-style: italic;
+}
+
+.check_out_order > h1 {
+  font-size: 24px;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.check_out_order_item {
+  border-bottom: 1px solid rgb(200, 200, 200);
+  padding-bottom: 8px;
+}
+
+.check_out_order_item {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  align-items: center;
+  margin-bottom: 8px;
+  gap: 4px;
+}
+
+.check_out_order_item h3 {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.check_out_order_item p {
+  font-size: 14px;
+  font-weight: 400;
+  color: #aaaaaa;
+}
+
+.check_out_order_item p span {
+  font-size: 12px;
+  font-weight: 500;
+  color: #aaaaaa;
+}
+
+.check_out_order_total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+  gap: 4px;
+}
+
+.check_out_order_total h3 {
+  font-size: 18px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.check_out_order_total p {
+  font-size: 20px;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #777777;
+}

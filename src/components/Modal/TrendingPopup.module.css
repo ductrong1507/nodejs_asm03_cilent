@@ -1,0 +1,106 @@
+#modal {
+  background-color: rgba(0, 0, 0, 0.7);
+  font-style: italic;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal_container {
+  position: relative;
+  width: 900px;
+  min-height: 600px;
+  padding: 60px 40px 60px 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  background-color: #fff;
+}
+
+.modal_image {
+  width: 100%;
+  height: 100%;
+}
+
+.modal_image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.modal_content {
+  padding-top: 24px;
+}
+
+.modal_content h1 {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.modal_content h3 {
+  font-size: 18px;
+  font-weight: 500;
+  color: #969696;
+  margin-bottom: 6px;
+}
+
+.modal_content p {
+  font-size: 16px;
+  font-weight: 400;
+  color: #c0c0c0;
+  margin-bottom: 24px;
+  line-height: 1.4;
+}
+
+.modal_content button {
+  background-color: #1b1b1b;
+  border: none;
+  color: #ffffff;
+  padding: 12px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: flex;
+  gap: 6px;
+  font-size: 18px;
+  font-weight: 400;
+  font-style: italic;
+  cursor: pointer;
+  transition: all 0.2s linear;
+  align-items: center;
+  justify-content: space-between;
+  align-content: center;
+}
+
+.modal_content button:hover {
+  transform: scale(1.1);
+}
+
+.modal_close_btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.modal_close_btn button {
+  border: none;
+  padding: 8px;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.modal_close_btn button i {
+  font-size: 32px;
+  color: rgb(50, 50, 50);
+}
+
+.modal_close_btn button:hover i {
+  color: #000;
+  transform: scale(1.1);
+}

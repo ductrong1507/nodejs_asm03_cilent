@@ -1,0 +1,197 @@
+#live_chat {
+  position: fixed;
+  display: block;
+  bottom: 120px;
+  right: 100px;
+  width: 420px;
+  border-radius: 20px;
+  overflow: hidden;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.chat_icon {
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  bottom: 50px;
+  right: 50px;
+  background-color: rgb(0, 0, 0);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #fff;
+  transition: all 0.2s linear;
+}
+
+.chat_icon i {
+  font-size: 28px;
+}
+
+.chat_icon:hover {
+  transform: scale(1.2);
+  background-color: #fff;
+  color: rgb(120, 120, 120);
+}
+
+/* Phần header chat pop up */
+.live_chat_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #c8c8c8;
+  padding: 12px 20px;
+}
+
+.live_chat_header h3 {
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.live_chat_header > button {
+  background-color: rgb(235, 235, 235);
+  border: none;
+  color: rgb(100, 100, 100);
+  padding: 4px 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  font-style: italic;
+  cursor: pointer;
+  transition: all 0.2s linear;
+}
+
+/* Phần content pop up chat */
+.live_chat_content {
+  height: 400px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  padding: 16px 24px;
+}
+
+.live_chat_content_customer {
+  text-align: right;
+  margin-bottom: 12px;
+  font-size: 14px;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.live_chat_content_customer p {
+  display: inline-block;
+  background-color: #48b0f7;
+  padding: 6px 8px;
+  color: #fff;
+  letter-spacing: 1px;
+  border-radius: 4px;
+  max-width: 270px;
+}
+
+.live_chat_content_bot {
+  text-align: left;
+  margin-bottom: 12px;
+  font-size: 14px;
+  font-weight: 400;
+  font-style: italic;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.live_chat_content_bot img {
+  display: block;
+  width: 30px;
+  border-radius: 50%;
+}
+
+.live_chat_content_bot p {
+  display: inline-block;
+  max-width: 260px;
+  background-color: rgb(245, 245, 245);
+  padding: 6px 8px;
+  color: rgb(150, 150, 150);
+  letter-spacing: 1px;
+  border-radius: 4px;
+}
+
+/* Phần footer popup chat */
+.live_chat_footer {
+  background-color: rgb(235, 235, 235);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border-top: 1px solid #c8c8c8;
+  padding: 12px 20px;
+}
+
+.live_chat_avatar img {
+  display: block;
+  width: 30px;
+  border-radius: 50%;
+}
+
+.form_group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-style: italic;
+}
+
+.form_control {
+  padding: 6px 8px;
+  display: block;
+  border: none;
+  font-size: 16px;
+  outline: none;
+  transition: all 0.2s linear;
+}
+
+.form_control::placeholder {
+  font-weight: 500;
+  font-size: 14px;
+  color: rgb(100, 100, 100);
+  text-transform: capitalize;
+}
+
+.form_control:focus {
+  font-weight: 500;
+}
+
+.form_control:focus::placeholder {
+  color: transparent;
+}
+
+.live_chat_btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.live_chat_btn > button {
+  background-color: transparent;
+  border: none;
+  color: rgb(150, 150, 150);
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.2s linear;
+  opacity: 0.8;
+}
+
+.live_chat_btn > button:hover {
+  transform: scale(1.2);
+  opacity: 1;
+}
+
+.live_chat_btn_send {
+  color: #00bbec !important;
+}

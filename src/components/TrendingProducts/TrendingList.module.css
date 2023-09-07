@@ -1,0 +1,26 @@
+#trending_products {
+  padding: 40px 0 0 0;
+  font-style: italic;
+}
+
+#trending_products h3 {
+  font-size: 16px;
+  font-weight: 400;
+  color: #8b8b8b;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+
+#trending_products h1 {
+  font-size: 24px;
+  font-weight: 500;
+  color: #000;
+  margin-bottom: 24px;
+  text-transform: uppercase;
+}
+
+.product_list_container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
