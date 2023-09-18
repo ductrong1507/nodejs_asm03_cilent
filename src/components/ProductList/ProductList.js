@@ -39,7 +39,6 @@ export default function ProductList() {
         });
       })
       .catch((error) => {
-        console.log("error", error);
         toast.error(error.response.data.message);
       });
   };

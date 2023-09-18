@@ -1,0 +1,157 @@
+/* Phần banner */
+#history_banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f8f9fa;
+  padding: 80px 40px;
+  text-transform: uppercase;
+  font-style: italic;
+  margin-bottom: 32px;
+}
+
+#history_banner h1 {
+  font-weight: 500;
+  font-size: 32px;
+  color: #2d2d2d;
+}
+
+#history_banner h3 {
+  font-weight: 500;
+  font-size: 20px;
+  color: #aaaaaa;
+}
+
+#history {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 24px;
+  padding: 40px 0;
+}
+
+/* Phần nội dung chính page cart */
+.history_content > h1 {
+  text-transform: uppercase;
+  font-weight: 500;
+  font-style: italic;
+  font-size: 25px;
+  color: #2d2d2d;
+}
+
+.history_container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin: 24px 0;
+  align-items: start;
+}
+
+/*  Phần bảng danh sách sản phẩm */
+.history_item_infor table {
+  width: 100%;
+  text-align: center;
+  font-style: italic;
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.history_item_infor table thead {
+  background-color: #f8f9fa;
+}
+
+.history_item_infor table thead th {
+  padding: 20px 12px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.history_item_infor table tbody tr:not(:last-child) {
+  border-bottom: 2px solid rgb(188, 188, 188);
+}
+
+.history_item_infor table tbody td {
+  padding: 12px 4px;
+}
+
+.item_text1 {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.item_text2 {
+  font-size: 16px;
+  font-weight: 400;
+  color: #969696;
+}
+
+.item_action button {
+  height: 100%;
+  background-color: transparent;
+  color: #000;
+  padding: 4px 12px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 400;
+  font-style: italic;
+  border: 2px solid #969696;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s linear;
+}
+
+.item_action button:hover {
+  color: rgb(120, 120, 120);
+  border: 2px solid #000;
+
+  /* transform: scale(1.1); */
+}
+
+/* .item_quantity .item_quantity_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+/* .item_quantity p {
+  font-size: 18px;
+  font-weight: 500;
+} */
+
+/* .item_quantity button {
+  height: 100%;
+  background-color: transparent;
+  border: none;
+  color: #000;
+  padding: 0px 12px;
+  text-align: center;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 400;
+  font-style: italic;
+  cursor: pointer;
+  transition: all 0.2s linear;
+} */
+
+/* .item_quantity button:hover {
+  color: rgb(120, 120, 120);
+  transform: scale(1.1);
+} */
+
+/* .item_remove {
+  font-size: 20px;
+  font-weight: 500;
+  color: #969696;
+} */
+
+/* .item_remove i {
+  cursor: pointer;
+  transition: all 0.3s linear;
+} */
+
+/* .item_remove i:hover {
+  color: #000;
+} */

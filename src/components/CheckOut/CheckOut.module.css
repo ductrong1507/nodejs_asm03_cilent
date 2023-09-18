@@ -152,6 +152,9 @@
 }
 
 .check_out_order_item p {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   font-size: 14px;
   font-weight: 400;
   color: #aaaaaa;

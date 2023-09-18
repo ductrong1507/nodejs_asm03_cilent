@@ -5,7 +5,9 @@ import styles from "./Navbar.module.css";
 
 export default function Navbar() {
   const { isAuth, currentUser } = useSelector((state) => state.AuthReducer);
-  const { cartArr } = useSelector((state) => state.CartReducer);
+  const { cartArr, totalItems } = useSelector(
+    (state) => state.cartToolkitReducer
+  );
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -14,6 +16,8 @@ export default function Navbar() {
     dispatch({
       type: "ON_LOGOUT",
     });
+
+    navigate("/");
   };
 
   // xử lý nút mũi tên
@@ -45,6 +49,21 @@ export default function Navbar() {
               Shop
             </NavLink>
           </li>
+
+          {isAuth ? (
+            <li>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? `${styles.link} link_active` : `${styles.link}`
+                }
+                to="/history"
+              >
+                History
+              </NavLink>
+            </li>
+          ) : (
+            ""
+          )}
         </ul>
       </div>
       <div className={styles.nav_title}>
@@ -52,39 +71,35 @@ export default function Navbar() {
       </div>
       <div className={styles.nav_item}>
         <ul>
-          <li>
-            <NavLink
-              className={({ isActive }) =>
-                isActive ? `${styles.link} link_active` : `${styles.link}`
-              }
-              to="/cart"
-            >
-              <i
-                className={`fa-solid fa-cart-flatbed mr-8 ${styles.link_icon}`}
-              />
-              Cart
-            </NavLink>
-            <span>
-              {cartArr.length
-                ? `(${cartArr.reduce(
-                    (total, item) => (total += item.quantity),
-                    0
-                  )})`
-                : ""}
-            </span>
-          </li>
           {isAuth ? (
-            <li>
-              <p className={styles.link}>
-                <i className={`fa-solid fa-user mr-8 ${styles.link_icon}`} />
-                {currentUser.fullName}
-                <i
-                  onClick={showUserInfo}
-                  className={`fa-sharp fa-solid fa-caret-down ${styles.link_icon_login}`}
-                />
-                <span onClick={logoutClickHandle}>{`(Logout)`}</span>
-              </p>
-            </li>
+            <>
+              <li>
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive ? `${styles.link} link_active` : `${styles.link}`
+                  }
+                  to="/cart"
+                >
+                  <i
+                    className={`fa-solid fa-cart-flatbed mr-8 ${styles.link_icon}`}
+                  />
+                  Cart
+                </NavLink>
+                <span>{isAuth ? `(${totalItems})` : ""}</span>
+              </li>
+
+              <li>
+                <p className={styles.link}>
+                  <i className={`fa-solid fa-user mr-8 ${styles.link_icon}`} />
+                  {currentUser.fullName}
+                  <i
+                    onClick={showUserInfo}
+                    className={`fa-sharp fa-solid fa-caret-down ${styles.link_icon_login}`}
+                  />
+                  <span onClick={logoutClickHandle}>{`(Logout)`}</span>
+                </p>
+              </li>
+            </>
           ) : (
             <li>
               <NavLink

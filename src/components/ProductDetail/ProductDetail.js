@@ -1,18 +1,22 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
-
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate, useParams } from "react-router-dom";
+import Cookies from "js-cookie";
 import styles from "./ProductDetail.module.css";
+import { addToCartApi } from "../../redux/Reducers/cartToolkitReducer";
+import { toast } from "react-toastify";
 
 export default function ProductDetail(props) {
   const [isShow, setIsShow] = useState(false);
-  const [inputValue, setInputValue] = useState(0);
+  const [inputValue, setInputValue] = useState(1);
+  const { productId } = useParams();
+  const { currentUser, isAuth } = useSelector((state) => state.AuthReducer);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   // Khi click vào sản phẩm liên quan
   const clickRelatedHandle = (product) => {
-    setInputValue(0);
+    setInputValue(1);
     navigate(`/detail/${product._id}`);
   };
 
@@ -66,15 +70,23 @@ export default function ProductDetail(props) {
 
   // Xử lý Add cart
   const addCartHandle = () => {
-    dispatch({
-      type: "ADD_CART",
-      data: {
-        product: props.productDetail[0],
-        amount: inputValue || 1,
-      },
-    });
-    alert("Đã thêm thành công!!!");
-    setInputValue(0);
+    if (isAuth) {
+      dispatch(
+        addToCartApi(
+          productId,
+          inputValue,
+          currentUser._id,
+          Cookies.get("accessToken")
+        )
+      );
+      setInputValue(1);
+    } else {
+      toast.warning("Vui lòng đăng nhập để đặt hàng!", {
+        onClose: () => {
+          navigate("../login");
+        },
+      });
+    }
   };
 
   return (

@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import Cookies from "js-cookie";
 import styles from "./SignInForm.module.css";
 import { API_BASE_URL } from "../../utils/apiConfig";
 import { toast } from "react-toastify";
+import { initializeCartApi } from "../../redux/Reducers/cartToolkitReducer";
 
 export default function SignInForm(props) {
   const [inputHandle, setInputHandle] = useState({
@@ -74,10 +76,14 @@ export default function SignInForm(props) {
 
       apiResponse
         .then((result) => {
-          console.log("result.data", result);
-
           if (result.data.status) {
             toast.success(result.data.message);
+
+            // chạy action thunk nạp dữ liệu giỏ hàng
+            dispatch(
+              initializeCartApi(result.data.result._id, result.data.accessToken)
+            );
+
             setTimeout(() => {
               dispatch({
                 type: "ON_LOGIN",
@@ -87,7 +93,6 @@ export default function SignInForm(props) {
           }
         })
         .catch((err) => {
-          console.log(err);
           toast.error(err.response.data.message);
           setInputHandle({
             ...inputHandle,

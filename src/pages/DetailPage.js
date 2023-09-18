@@ -34,22 +34,6 @@ export default function DetailPage(props) {
           setMainImg(product.img1);
           setProductRelated(res.data.relatedProduct);
         }
-
-        // const product = res.data.filter(
-        //   (product) => product._id.$oid === params.productId
-        // );
-        // const related = res.data.filter(
-        //   (relatedProduct) =>
-        //     relatedProduct.category === product[0].category &&
-        //     relatedProduct._id.$oid !== params.productId
-        // );
-        // setProductDetail(product);
-        // setMainImg(product[0].img1);
-        // setProductRelated(related);
-        // return {
-        //   product,
-        //   total: res.data,
-        // };
       })
 
       .catch((error) => {

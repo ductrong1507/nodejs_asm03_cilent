@@ -1,12 +1,22 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import CartItem from "./CartItem";
 import styles from "./ShoppingCart.module.css";
+import Cookies from "js-cookie";
+import { initializeCartApi } from "../../redux/Reducers/cartToolkitReducer";
 
 export default function ShoppingCart() {
-  const { cartArr } = useSelector((state) => state.CartReducer);
+  const { currentUser } = useSelector((state) => state.AuthReducer);
+
+  const { cartArr } = useSelector((state) => state.cartToolkitReducer);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    // chạy action thunk nạp dữ liệu giỏ hàng
+    dispatch(initializeCartApi(currentUser._id, Cookies.get("accessToken")));
+  }, []);
 
   // Xử lý nút return
   const returnShoppingPage = () => {
@@ -20,9 +30,21 @@ export default function ShoppingCart() {
 
   // render danh sách sản phẩm
   const renderItemList = () => {
-    return cartArr.map((item, index) => {
-      return <CartItem key={item.id} item={item} />;
-    });
+    if (cartArr.length !== 0) {
+      return cartArr.map((item, index) => {
+        const productInfo = {
+          ...item.product,
+          quantity: item.quantity,
+        };
+        return <CartItem key={item.product._id} item={productInfo} />;
+      });
+    } else {
+      return (
+        <tr>
+          <td>No Items</td>
+        </tr>
+      );
+    }
   };
 
   return (
@@ -32,6 +54,7 @@ export default function ShoppingCart() {
         <h3>Cart</h3>
       </div>
 
+      {/* Phần cart list items */}
       <div className={styles.shopping_cart_content}>
         <h1>Shopping Cart</h1>
         <div className={styles.shopping_cart_container}>
@@ -61,7 +84,7 @@ export default function ShoppingCart() {
               <p>
                 {cartArr
                   .reduce((total, item) => {
-                    return total + Number(item.price) * item.quantity;
+                    return total + Number(item.product.price) * item.quantity;
                   }, 0)
                   .toLocaleString()}{" "}
                 VND
@@ -73,7 +96,7 @@ export default function ShoppingCart() {
               <p>
                 {cartArr
                   .reduce((total, item) => {
-                    return total + Number(item.price) * item.quantity;
+                    return total + Number(item.product.price) * item.quantity;
                   }, 0)
                   .toLocaleString()}{" "}
                 VND

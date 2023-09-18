@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import TrendingItem from "./TrendingItem";
 import styles from "./TrendingList.module.css";
 import { API_BASE_URL } from "../../utils/apiConfig";
+import { toast } from "react-toastify";
 
 export default function TrendingList() {
   const [productList, setProductList] = useState([]);
@@ -22,6 +23,7 @@ export default function TrendingList() {
         setProductList(res.data.result);
       })
       .catch((error) => {
+        toast.error(error.response.data.message);
         console.log("error", error);
       });
   };

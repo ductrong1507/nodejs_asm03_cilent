@@ -6,7 +6,7 @@ export default function NotFoundPage() {
     fontWeight: "bold",
   };
   return (
-    <main style={stylesCustom} className="center_text w-70 mt-32">
+    <main style={stylesCustom} className="center_text w-70 mb-32 mt-32">
       Page not found!!!
     </main>
   );

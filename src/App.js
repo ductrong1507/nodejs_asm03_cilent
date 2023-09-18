@@ -14,7 +14,8 @@ import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 import LiveChat from "./components/LiveChat/LiveChat";
 import { useSelector } from "react-redux";
-import TestComponent from "./components/TestComponent/TestComponent";
+import HistoryPage from "./pages/HistoryPage";
+import OrderDetailPage from "./pages/OrderDetailPage";
 
 function App() {
   const { isAuth } = useSelector((state) => state.AuthReducer);
@@ -24,19 +25,38 @@ function App() {
 
       {/* chia router page */}
       <Routes>
-        {/* <Route exact path="/" component={HomePage} /> */}
         <Route path="/" element={<HomePage />} />
 
         <Route path="/shop" element={<ShopPage />} />
 
-        {/* <Route exact path="/detail/:productId" component={DetailPage} /> */}
         <Route path="/detail/:productId" element={<DetailPage />} />
 
-        {/* <Route exact path="/cart" component={CartPage} /> */}
-        <Route path="/cart" element={<CartPage />} />
+        {/* Chuyển hướng trang giỏ hàng khi chưa hoặc đã đăng nhập */}
+        <Route
+          path="/cart"
+          element={!isAuth ? <Navigate to="/login" replace /> : <CartPage />}
+        />
 
-        {/* <Route exact path="/checkout" component={CheckoutPage} /> */}
-        <Route path="/checkout" element={<CheckoutPage />} />
+        {/* Chuyển hướng trang check out khi chưa hoặc đã đăng nhập */}
+        <Route
+          path="/checkout"
+          element={
+            !isAuth ? <Navigate to="/login" replace /> : <CheckoutPage />
+          }
+        />
+
+        {/* Chuyển hướng trang history và chi tiết history khi chưa hoặc đã đăng nhập */}
+        <Route
+          path="/history"
+          element={!isAuth ? <Navigate to="/login" replace /> : <HistoryPage />}
+        />
+
+        <Route
+          path="/history/:orderId"
+          element={
+            !isAuth ? <Navigate to="/login" replace /> : <OrderDetailPage />
+          }
+        />
 
         {/* Chuyển hướng trang login khi chưa hoặc đã đăng nhập */}
         <Route
@@ -49,9 +69,6 @@ function App() {
           path="/register"
           element={isAuth ? <Navigate to="/" replace /> : <RegisterPage />}
         />
-
-        {/* tesst new redux toolkit */}
-        {/* <Route path="/test" element={<TestComponent />} /> */}
 
         {/* Chuyển hướng khi nhập url ko đúng */}
         <Route path="/*" element={<NotFoundPage />} />

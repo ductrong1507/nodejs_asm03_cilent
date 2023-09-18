@@ -95,7 +95,6 @@ export default function SignUpForm() {
 
       apiResponse
         .then((result) => {
-          console.log("result", result);
           if (result.data.status) {
             toast.success(result.data.message);
             setTimeout(() => navigate("/login"), 1000);
